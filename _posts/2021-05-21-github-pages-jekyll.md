@@ -60,92 +60,92 @@ Jekyll是一个简单的，可识别博客的静态网站生成器，非常适�
 
 1. 下载安装[Ruby+Devkit](https://rubyinstaller.org/downloads/),选项全部默认即可
 
-- 安装目录`不要有空格、中文`,例如常用的Program Files安装目录就不可以
+   - 安装目录`不要有空格、中文`,例如常用的Program Files安装目录就不可以
 
 2. 最后一步`ridk install`一定要勾选，随后弹出一个cmd窗口，选择3即可
 
-![image-20210521151056035](https://waha-note.oss-cn-beijing.aliyuncs.com/PicGo/20210521151056.png)
+    ![image-20210521151056035](https://waha-note.oss-cn-beijing.aliyuncs.com/PicGo/20210521151056.png)
 
-![image-20210521151334178](https://waha-note.oss-cn-beijing.aliyuncs.com/PicGo/20210521151334.png)
+    ![image-20210521151334178](https://waha-note.oss-cn-beijing.aliyuncs.com/PicGo/20210521151334.png)
 
-然后验证是否安装成功，打开命令窗口，输入`ruby -v`和`gem -v`如果能够查询到版本表示安装成功
+    然后验证是否安装成功，打开命令窗口，输入`ruby -v`和`gem -v`如果能够查询到版本表示安装成功
 
-```shell
-C:\Users\wa_ha>ruby -v
-ruby 2.7.3p183 (2021-04-05 revision 6847ee089d) [x64-mingw32]
+    ```shell
+    C:\Users\wa_ha>ruby -v
+    ruby 2.7.3p183 (2021-04-05 revision 6847ee089d) [x64-mingw32]
 
-C:\Users\wa_ha>gem -v
-3.1.6
-```
+    C:\Users\wa_ha>gem -v
+    3.1.6
+    ```
 
 3. 安装jekyll、bundler
 
-- 打开命令窗口输入`gem install jekyll bundler`
-- 如果超时，可以先尝试更改gem源为[国内源](https://gems.ruby-china.com/)
-- 如果更改源也不行，则有可能是ipv6的原因，需要禁用网络ipv6，禁用方法参考[Win10关闭IPv6协议的方法](https://windows10.pro/win10-turn-off-ipv6/)
+   - 打开命令窗口输入`gem install jekyll bundler`
+   - 如果超时，可以先尝试更改gem源为[国内源](https://gems.ruby-china.com/)
+   - 如果更改源也不行，则有可能是ipv6的原因，需要禁用网络ipv6，禁用方法参考[Win10关闭IPv6协议的方法](https://windows10.pro/win10-turn-off-ipv6/)
 
-```shell
-C:\Users\wa_ha>gem install jekyll bundler
-Successfully installed jekyll-4.2.0
-Parsing documentation for jekyll-4.2.0
-Done installing documentation for jekyll after 0 seconds
-Successfully installed bundler-2.2.17
-Parsing documentation for bundler-2.2.17
-Done installing documentation for bundler after 2 seconds
-2 gems installed
-```
+    ```shell
+    C:\Users\wa_ha>gem install jekyll bundler
+    Successfully installed jekyll-4.2.0
+    Parsing documentation for jekyll-4.2.0
+    Done installing documentation for jekyll after 0 seconds
+    Successfully installed bundler-2.2.17
+    Parsing documentation for bundler-2.2.17
+    Done installing documentation for bundler after 2 seconds
+    2 gems installed
+    ```
 
 ### 使用方法
 
 1. 克隆github pages远程仓库
 
-```shell
-git clone https://github.com/username/username.github.io
-cd username.github.io/
-```
+    ```shell
+    git clone https://github.com/username/username.github.io
+    cd username.github.io/
+    ```
 
 2. `jekyll new . --force`
 
-- 最重要的文件夹就是`_posts`，增加新的博客文章就是向此文件夹添加新的markdown文件即可。
+   - 最重要的文件夹就是`_posts`，增加新的博客文章就是向此文件夹添加新的markdown文件即可。
 
-```shell
-(base) PS D:\Workspace\Git\wahaoo-dev.github.io> ls
-
-
-    目录: D:\Workspace\Git\wahaoo-dev.github.io
+    ```shell
+    (base) PS D:\Workspace\Git\wahaoo-dev.github.io> ls
 
 
-Mode                 LastWriteTime         Length Name
-----                 -------------         ------ ----
-d-----         2021/5/21     15:53                _posts
--a----         2021/5/21     15:53             56 .gitignore
--a----         2021/5/21     15:53            419 404.html
--a----         2021/5/21     15:53            539 about.markdown
--a----         2021/5/21     15:53           1155 Gemfile
--a----         2021/5/21     15:53           2039 Gemfile.lock
--a----         2021/5/21     15:53            175 index.markdown
--a----         2021/5/21     15:30          11558 LICENSE
--a----         2021/5/21     15:30           1348 README.md
--a----         2021/5/21     15:53           2080 _config.yml
-```
+        目录: D:\Workspace\Git\wahaoo-dev.github.io
+
+
+    Mode                 LastWriteTime         Length Name
+    ----                 -------------         ------ ----
+    d-----         2021/5/21     15:53                _posts
+    -a----         2021/5/21     15:53             56 .gitignore
+    -a----         2021/5/21     15:53            419 404.html
+    -a----         2021/5/21     15:53            539 about.markdown
+    -a----         2021/5/21     15:53           1155 Gemfile
+    -a----         2021/5/21     15:53           2039 Gemfile.lock
+    -a----         2021/5/21     15:53            175 index.markdown
+    -a----         2021/5/21     15:30          11558 LICENSE
+    -a----         2021/5/21     15:30           1348 README.md
+    -a----         2021/5/21     15:53           2080 _config.yml
+    ```
 
 
 
 3. 本地运行：`bundle exec jekyll serve`，打开http://127.0.0.1:4000/即可看到jekyll默认的博客主题
 
-```shell
-(base) PS D:\Workspace\Git\wahaoo-dev.github.io> bundle exec jekyll serve
-Configuration file: D:/Workspace/Git/wahaoo-dev.github.io/_config.yml
-            Source: D:/Workspace/Git/wahaoo-dev.github.io
-       Destination: D:/Workspace/Git/wahaoo-dev.github.io/_site
- Incremental build: disabled. Enable with --incremental
-      Generating...
-       Jekyll Feed: Generating feed for posts
-                    done in 0.666 seconds.
- Auto-regeneration: enabled for 'D:/Workspace/Git/wahaoo-dev.github.io'
-    Server address: http://127.0.0.1:4000/
-  Server running... press ctrl-c to stop.
-```
+    ```shell
+    (base) PS D:\Workspace\Git\wahaoo-dev.github.io> bundle exec jekyll serve
+    Configuration file: D:/Workspace/Git/wahaoo-dev.github.io/_config.yml
+                Source: D:/Workspace/Git/wahaoo-dev.github.io
+          Destination: D:/Workspace/Git/wahaoo-dev.github.io/_site
+    Incremental build: disabled. Enable with --incremental
+          Generating...
+          Jekyll Feed: Generating feed for posts
+                        done in 0.666 seconds.
+    Auto-regeneration: enabled for 'D:/Workspace/Git/wahaoo-dev.github.io'
+        Server address: http://127.0.0.1:4000/
+      Server running... press ctrl-c to stop.
+    ```
 
 ### 修改配置文件_config.yml
 
